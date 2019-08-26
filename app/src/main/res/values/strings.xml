@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Roman Numerals</string>
+    <string name="delete">Del</string>
+    <string name="one">I</string>
+    <string name="five">V</string>
+    <string name="ten">X</string>
+    <string name="fifty">L</string>
+    <string name="one_hundred">C</string>
+    <string name="five_hundred">D</string>
+    <string name="thousand">M</string>
 </resources>
