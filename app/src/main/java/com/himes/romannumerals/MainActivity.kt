@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.himes.romannumerals.databinding.ActivityMainBinding
 import com.himes.romannumerals.entryscreen.EntryScreenViewModel
+import com.himes.romannumerals.models.RomanNumeral
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +14,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        mainBinding.viewModel = EntryScreenViewModel("IV")
+        mainBinding.viewModel = EntryScreenViewModel(RomanNumeral("IV"))
     }
 }

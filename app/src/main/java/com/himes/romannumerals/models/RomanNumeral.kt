@@ -2,6 +2,10 @@ package com.himes.romannumerals.models
 
 class RomanNumeral(val numeral: String) {
 
+    init {
+        intValue()
+    }
+
     fun intValue(): Int = numeral.fold(RomanSum.Initial) { roman, char ->
         with(RomanValue.valueOf(char.toString())) {
             roman.copy(
@@ -13,6 +17,8 @@ class RomanNumeral(val numeral: String) {
             )
         }
     }.total
+
+    fun addValue(newValue: RomanValue): RomanNumeral = RomanNumeral(numeral + newValue.name.toUpperCase())
 
     private data class RomanSum(
         val last: RomanValue,
