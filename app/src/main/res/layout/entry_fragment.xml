@@ -9,7 +9,7 @@
         <import type="com.himes.romannumerals.models.RomanValue" />
         <variable
             name="state"
-            type="com.himes.romannumerals.entryscreen.EntryScreenState"
+            type="com.himes.romannumerals.entryscreen.NumberConversionState"
             />
         <variable
             name="handler"
@@ -48,7 +48,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button_mid"
-            app:layout_constraintGuide_percent=".8"
+            app:layout_constraintGuide_percent=".7"
+            android:orientation="horizontal"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_bottom"
+            app:layout_constraintGuide_percent=".85"
             android:orientation="horizontal"
             />
 
@@ -105,7 +113,7 @@
             android:id="@+id/add_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/button_bottom"
             app:layout_constraintTop_toTopOf="@id/button_mid"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/add_d"
@@ -117,7 +125,7 @@
             android:id="@+id/add_d"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/button_bottom"
             app:layout_constraintTop_toTopOf="@id/button_mid"
             app:layout_constraintLeft_toRightOf="@id/add_c"
             app:layout_constraintRight_toLeftOf="@id/add_m"
@@ -129,7 +137,7 @@
             android:id="@+id/add_m"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/button_bottom"
             app:layout_constraintTop_toTopOf="@id/button_mid"
             app:layout_constraintLeft_toRightOf="@id/add_d"
             app:layout_constraintRight_toLeftOf="@id/back"
@@ -141,12 +149,24 @@
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/button_bottom"
             app:layout_constraintTop_toTopOf="@id/button_mid"
             app:layout_constraintLeft_toRightOf="@id/add_m"
             app:layout_constraintRight_toRightOf="parent"
             android:text="@string/delete"
             android:onClick="@{() -> handler.deleteLast()}"
+            />
+
+        <Button
+            android:id="@+id/convert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_bottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/convert"
+            android:onClick="@{() -> handler.convert()}"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

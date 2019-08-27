@@ -2,4 +2,5 @@
 <resources>
     <dimen name="current_roman_numeral_text_size">24sp</dimen>
     <dimen name="result_text_size">32sp</dimen>
+    <dimen name="current_result_numeral_text_size">40sp</dimen>
 </resources>

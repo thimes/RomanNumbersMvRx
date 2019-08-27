@@ -22,6 +22,8 @@ data class RomanNumeral(val numeral: String): Parcelable {
         }
     }.total
 
+    fun persianString() = intValue().toString()
+
     fun addValue(newValue: RomanValue): RomanNumeral = RomanNumeral(numeral + newValue.name.toUpperCase())
 
     private data class RomanSum(
