@@ -1,6 +1,10 @@
 package com.himes.romannumerals.models
 
-class RomanNumeral(val numeral: String) {
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class RomanNumeral(val numeral: String): Parcelable {
 
     init {
         intValue()
