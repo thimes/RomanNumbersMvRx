@@ -22,7 +22,7 @@ class NumberConversionViewModel(
     numberConversionState: NumberConversionState
 ) : MvRxViewModel<NumberConversionState>(numberConversionState) {
     fun addValue(newValue: RomanValue) = setState { copy(romanNumeral = romanNumeral.addValue(newValue)) }
-    fun delete() = setState { copy(romanNumeral = RomanNumeral(romanNumeral.numeral.dropLast(1))) }
+    fun delete() = setState { copy(romanNumeral = RomanNumeral(romanNumeral.delete())) }
 }
 
 class EntryScreenFragment: BaseMvRxFragment(), EntryScreenHandler {

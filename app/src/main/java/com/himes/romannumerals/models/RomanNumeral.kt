@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class RomanNumeral(val numeral: String): Parcelable {
+data class RomanNumeral(val numeral: String = ""): Parcelable {
 
     init {
         intValue()
@@ -25,6 +25,8 @@ data class RomanNumeral(val numeral: String): Parcelable {
     fun persianString() = intValue().toString()
 
     fun addValue(newValue: RomanValue): RomanNumeral = RomanNumeral(numeral + newValue.name.toUpperCase())
+
+    fun delete(): String = numeral.dropLast(1)
 
     private data class RomanSum(
         val last: RomanValue,

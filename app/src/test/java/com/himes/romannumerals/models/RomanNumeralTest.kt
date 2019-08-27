@@ -67,4 +67,10 @@ class RomanNumeralTest {
         assertEquals(10, original.intValue())
         assertEquals(15, unoriginal.intValue())
     }
+
+    @Test
+    fun `test delete removes last value`() {
+        val original = RomanNumeral("XI")
+        assertEquals("X", original.delete())
+    }
 }
